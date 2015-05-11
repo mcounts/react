@@ -9,16 +9,22 @@
     <div id="content"></div>
     <script type="text/jsx">
       var CommentBox = React.createClass({
+        getInitialState: function(){
+          return {
+            count: 5
+          }
+        },
         render: function() {
           return (
             <div className="commentBox">
-              Hello, world!
+              <h1>Hello, {this.props.title}!</h1>
+              <h2>{this.state.count}</h2>
             </div>
           );
         }
       });
       React.render(
-        <CommentBox />,
+        <CommentBox title='World'/>,
         document.getElementById('content')
       );
     </script>
